@@ -1,0 +1,24 @@
+<div class="d-flex flex-column flex-shrink-0 py-3 px-3 bg-dark text-white vh-100">
+  <div class="d-flex align-items-center justify-content-center py-2">
+    <%= link_to "PSC", user_session_path, class: "text-white display-6 text-decoration-none" %>
+  </div>
+  <hr />
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <%= sidebar_link_to(user_session_path, "トップ") %>
+    </li>
+    <li class="nav-item">
+      <%= sidebar_link_to(user_session_path, "休暇申請") %>
+    </li>
+    <li class="nav-item">
+      <%= sidebar_link_to(user_session_path, "相対申請") %>
+    </li>
+    <li class="nav-item">
+      <%= sidebar_link_to(user_session_path, "ユーザー追加") %>
+    </li>
+    <li class="nav-item">
+      <%= sidebar_link_to(user_session_path, "設定") %>
+    </li>
+  </ul>
+</div>
