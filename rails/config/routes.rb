@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources  :home
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   # rootをログイン画面に設定

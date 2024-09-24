@@ -131,6 +131,13 @@ ja:
       send_instructions: アカウントのロック解除方法を数分以内にメールでご連絡します。
       send_paranoid_instructions: アカウントが見つかった場合、アカウントのロック解除方法を数分以内にメールでご連絡します。
       unlocked: アカウントをロック解除しました。
+  sidebar:
+    contents:
+      top: トップ
+      request_holiday: 休暇申請
+      request_partner: 相対申請
+      add_user: ユーザ追加
+      setting: 設定
   errors:
     messages:
       already_confirmed: は既に登録済みです。ログインしてください。
