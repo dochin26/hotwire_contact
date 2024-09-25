@@ -113,8 +113,15 @@ input, textarea {
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
+input[type=checkbox] {
+  width: 20px
+}
+
+/* container */
+
+.container {
+  text-align: left;
+  padding: auto;
 }
 
 /* box */
