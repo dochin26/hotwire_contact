@@ -8,6 +8,17 @@ module ApplicationHelper
   #     end
   #   end
 
+  #  ページごとの完全なタイトルを返す
+
+  def full_title(page_title = '')
+    base_title = "Part Staff Contact"
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
+
   def sidebar_link_to(path, text)
     classes = %w[my-1 nav-link text-white]
     classes << "active" if current_page?(path)
