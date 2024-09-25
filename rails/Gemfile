@@ -30,14 +30,8 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# ユーザー認証を提供する
-gem "devise"
-
-# devise を日本語化する
-gem "devise-i18n"
-
-# ユーザーのトークン認証を提供する
-gem "devise_token_auth"
+# 日本語化する
+gem "rails-i18n"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

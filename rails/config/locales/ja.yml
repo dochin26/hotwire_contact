@@ -204,3 +204,10 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  sidebar:
+    contents:
+      top: トップ
+      request_holiday: 休暇申請
+      request_partner: 相対申請
+      add_user: ユーザ追加
+      setting: 設定
