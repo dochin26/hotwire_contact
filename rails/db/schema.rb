@@ -15,8 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_01_224348) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "string"
-    t.integer "class"
+    t.integer "grade"
     t.string "firstname_kana"
     t.string "lastname_kana"
     t.datetime "created_at", null: false
