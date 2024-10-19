@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   resources :home
   resources :users
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-
 end
