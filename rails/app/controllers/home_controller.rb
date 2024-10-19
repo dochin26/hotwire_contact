@@ -5,4 +5,8 @@ class HomeController < ApplicationController
 
   def new
   end
+
+  def list
+    @users = User.all
+  end
 end

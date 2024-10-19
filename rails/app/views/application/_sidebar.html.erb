@@ -14,8 +14,11 @@
     <li class="nav-item">
       <%= sidebar_link_to("#", t('sidebar.contents.request_partner')) %>
     </li>
+        <li class="nav-item">
+      <%= sidebar_link_to(home_list_path, t('sidebar.contents.user_list')) %>
+    </li>
     <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.add_user')) %>
+      <%= sidebar_link_to(new_user_path, t('sidebar.contents.add_user')) %>
     </li>
     <li class="nav-item">
       <%= sidebar_link_to("#", t('sidebar.contents.setting')) %>

@@ -107,6 +107,10 @@ ja:
       year: 年
   errors:
     format: "%{attribute}%{message}"
+    attributes:
+      name: 名前
+      email: メールアドレス
+      password: パスワード
     messages:
       accepted: を受諾してください
       blank: を入力してください
@@ -209,5 +213,14 @@ ja:
       top: トップ
       request_holiday: 休暇申請
       request_partner: 相対申請
+      user_list: ユーザ一覧
       add_user: ユーザ追加
       setting: 設定
+  sign_up:
+    contents:
+      sign_up: ユーザ追加
+      name: 名前
+      email: メールアドレス
+      password: パスワード
+      confirmation: パスワード（確認）
+      create_account: アカウント追加

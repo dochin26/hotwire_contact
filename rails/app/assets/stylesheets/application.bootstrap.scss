@@ -146,6 +146,15 @@ input[type=checkbox] {
   border-radius: 10px;/*角の丸み*/
 }
 
+.box2 {
+  text-align: center;
+  padding: 3em 1em;
+  margin: 2em 0;
+  background: #FFF;
+  border: solid 3px gray;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -153,4 +162,32 @@ input[type=checkbox] {
   float: left;
   width: 100%;
   margin-top: 45px;
+}
+
+/* table */
+
+.table {
+  // テーブルのカスタムスタイル
+  th, td {
+    padding: 8px; // セルのパディング
+    text-align: left; // テキストを左揃えにする
+  }
+  th {
+    background-color: #f2f2f2; // ヘッダーの背景色
+  }
+}
+
+// ここでカスタムスタイルを定義します
+.show_table {
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .table-success {
+    background-color: #dff0d8;
+  }
+
+  .table-danger {
+    background-color: #f2dede;
+  }
 }

@@ -1,0 +1,23 @@
+<% provide(:title, 'User list') %>
+<h1>User list</h1>
+
+<div class="box2">
+<table class="table col-md-4">
+    <tr>
+        <th>No.</th>
+        <th>名前</th>
+        <th>E-Mail</th>
+        <th>作成日時</th>
+        <th>更新日時</th>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.created_at %></td>
+            <td><%= user.updated_at %></td>
+        </tr>
+    <% end %>
+</table>
+</div>
