@@ -1,17 +1,18 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+/* フォームラベル（必須項目）にアスタリスクを追加 */
 label.required:after {
-    content:" *";
-    color: red;
-  }
+  content:" *";
+  color: red;
+}
 
-/* mixins, variables, etc. */
-
+/* 色変数 */
 $gray-medium-light: #eaeaea;
+$dark-bg: #343a40;
+$hover-bg: #495057;
 
-/* universal */
-
+/* 全体設定 */
 section {
   overflow: auto;
 }
@@ -20,6 +21,7 @@ textarea {
   resize: vertical;
 }
 
+/* センター揃えクラス */
 .center {
   text-align: center;
   h1 {
@@ -27,8 +29,7 @@ textarea {
   }
 }
 
-/* typography */
-
+/* タイポグラフィ */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -54,9 +55,7 @@ p {
   line-height: 1.7em;
 }
 
-
-/* header */
-
+/* ヘッダー */
 #logo {
   float: left;
   margin-right: 10px;
@@ -72,25 +71,28 @@ p {
   }
 }
 
-/* footer */
-
+/* フッター */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: lightgray;
+
   a {
     color: gray;
     &:hover {
       color: darkgrey;
     }
   }
+
   small {
     float: left;
   }
+
   ul {
     float: right;
     list-style: none;
+
     li {
       float: left;
       margin-left: 15px;
@@ -98,14 +100,12 @@ footer {
   }
 }
 
-/* forms */
+/* フォームのスタイル */
 input, textarea {
   border: 1px solid #bbb;
   width: 30%;
   margin-bottom: 15px;
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 input {
@@ -116,68 +116,49 @@ input[type=checkbox] {
   width: 20px;
 }
 
-input[type=checkbox] {
-  width: 20px
-}
-
+/* エラーメッセージ */
 #error_explanation {
   color: red;
+  
   ul {
     color: red;
     margin: 0 0 30px 0;
   }
 }
 
-/* container */
-
+/* コンテナ */
 .container {
   text-align: left;
 }
 
-/* box */
+/* ボックススタイル共通化 */
+.box {
+  text-align: center;
+  padding: 3em 1em;
+  margin: 2em 0;
+  background: #FFF;
+  border: solid 3px gray;
+  border-radius: 10px;
+  z-index: 10;
+}
 
 .box1 {
-  text-align: center;
-  padding: 3em 1em;
-  margin: 2em 0;
   font-weight: bold;
-  background: #FFF;
-  border: solid 3px gray;/*線*/
-  border-radius: 10px;/*角の丸み*/
+  z-index: 10;
 }
 
-.box2 {
-  text-align: center;
-  padding: 3em 1em;
-  margin: 2em 0;
-  background: #FFF;
-  border: solid 3px gray;/*線*/
-  border-radius: 10px;/*角の丸み*/
-}
-
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-}
-
-/* table */
-
+/* テーブルのカスタムスタイル */
 .table {
-  // テーブルのカスタムスタイル
   th, td {
-    padding: 8px; // セルのパディング
-    text-align: left; // テキストを左揃えにする
+    padding: 8px; /* セルのパディング */
+    text-align: left; /* テキストを左揃えにする */
   }
+
   th {
-    background-color: #f2f2f2; // ヘッダーの背景色
+    background-color: #f2f2f2; /* ヘッダーの背景色 */
   }
 }
 
-// ここでカスタムスタイルを定義します
 .show_table {
   th {
     background-color: #f2f2f2;
@@ -189,5 +170,56 @@ input[type=checkbox] {
 
   .table-danger {
     background-color: #f2dede;
+  }
+}
+
+/* サイドバー */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  height: 100vh;
+  width: 200px;
+  background-color: #343a40;
+  z-index: 1000;  /* サイドバーが上に表示されるように設定 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.vh-100 {
+  margin-left: 200px;
+}
+
+.btn-primary {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 初期状態でスマートフォン表示時にサイドバーは隠れている */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    height: 0px;
+    left: 0px;
+  }
+
+  .btn-primary {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .vh-100 {
+    margin-left: 0px;
+  }
+
+
+  /* サイドバーが表示されているとき */
+  .sidebar.active {
+    width: 200px;
+    transform: none; /* トグル時にサイドバーを表示 */
+  }
+
+  /* メインコンテンツはサイドバーに影響を受けないように */
+  #main-content {
+    margin-left: 0; /* スマートフォンでは左のマージンをなくす */
+    z-index: 1; /* メインコンテンツがサイドバーの下に表示されるように */
   }
 }

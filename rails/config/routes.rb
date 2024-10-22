@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "sessions/new"
   root "home#home"
   resources :users
   get "/home/home", to: "home#home"
