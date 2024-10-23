@@ -1,7 +1,6 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
 import "./controllers"
-import * as bootstrap from "bootstrap"
 import "./sidebar_toggle"
 
-Turbo.session.drive = false
+// Turbo.session.drive = falseimport "@hotwired/turbo-rails"
+// import "controllers"

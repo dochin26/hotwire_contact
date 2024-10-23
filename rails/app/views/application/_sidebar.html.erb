@@ -9,29 +9,35 @@
 
   <hr />
   <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <%= sidebar_link_to(root_path, t('sidebar.contents.top')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.log_in')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.request_holiday')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.request_partner')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to(home_list_path, t('sidebar.contents.user_list')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to(new_user_path, t('sidebar.contents.add_user')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.setting')) %>
-    </li>
-    <li class="nav-item">
-      <%= sidebar_link_to("#", t('sidebar.contents.log_out')) %>
+    <% if logged_in? %>
+      <li class="nav-item">
+        <%= sidebar_link_to(root_path, t('sidebar.contents.top')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to("#", t('sidebar.contents.request_holiday')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to("#", t('sidebar.contents.request_partner')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to(home_list_path, t('sidebar.contents.user_list')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to(new_user_path, t('sidebar.contents.add_user')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to("#", t('sidebar.contents.setting')) %>
+      </li>
+      <li class="nav-item">
+        <%= sidebar_link_to("#", t('sidebar.contents.log_out')) %>
+      </li>
+      <li>
+        <%= link_to "Log out", logout_path, data: { "turbo-method": :delete } %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+      <%= sidebar_link_to(login_path, t('sidebar.contents.log_in')) %>
+    <% end %>
     </li>
   </ul>
 </div>
@@ -40,7 +46,7 @@
 
   <div class="container-fluid">
     <!-- トグルボタン -->
-    <button id="sidebar-toggle" class="btn btn-primary">
+    <button id="sidebar-toggle" class="btn btn-dark">
       ☰ メニュー
     </button>
   </div>
