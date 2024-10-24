@@ -182,7 +182,7 @@ input[type=checkbox] {
   height: 100vh;
   width: 200px;
   background-color: #343a40;
-  z-index: 1000;  /* サイドバーが上に表示されるように設定 */
+  z-index: 1;  /* サイドバーが上に表示されるように設定 */
   transition: transform 0.3s ease-in-out;
 }
 

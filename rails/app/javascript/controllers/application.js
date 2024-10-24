@@ -1,9 +1,9 @@
-import { Application } from "@hotwired/stimulus"
+// app/javascript/controllers/application.js
+import { Turbo } from "@hotwired/turbo-rails"
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+import SidebarToggle from "./sidebar_toggle"
 
 const application = Application.start()
-
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+const context = require.context("controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
